@@ -1,0 +1,301 @@
+/* Polices */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Styles de base */
+body {
+    font-family: 'Roboto', sans-serif; /* Utilisation d'une police moderne */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header {
+    background-color: #0033A0; /* Bleu Gendarmerie */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    width: calc(100% - 240px); /* Ajustement pour la sidebar */
+    position: fixed;
+    top: 0;
+    left: 240px; /* Ajustement pour la sidebar */
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le header */
+    transition: background-color 0.3s;
+}
+
+header:hover {
+    background-color: #002366; /* Bleu Marine */
+}
+
+.sidebar {
+    background-color: #001133; /* Bleu Plus Profond */
+    color: white;
+    padding: 2em 1em;
+    width: 220px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Ombre pour la sidebar */
+    transition: background-color 0.3s;
+}
+
+.sidebar:hover {
+    background-color: #00224d; /* Changement de couleur au survol */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 1em;
+    animation: slideIn 1s ease-out; /* Animation d'apparition des éléments de la liste */
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.sidebar ul li a:hover {
+    background-color: #0044cc; /* Bleu Plus Clair */
+    transform: scale(1.1);
+}
+
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le main */
+    border-radius: 8px;
+    margin-left: 240px; /* Espace pour la sidebar */
+    flex-grow: 1;
+    margin-top: 100px; /* Ajusté pour ne pas cacher le contenu sous le header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pour centrer les éléments */
+    animation: fadeInUp 1s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.notification {
+    background-color: #ffcccc;
+    color: #cc0000;
+    padding: 1em;
+    border-radius: 4px;
+    border: 1px solid #cc0000;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour la notification */
+    animation: fadeInDown 1s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.notification-top-right {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d; /* Rouge */
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Assurez-vous que l'élément est au-dessus des autres */
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+.notification-top-right span {
+    font-weight: bold;
+}
+
+h2 {
+    color: #0033A0; /* Bleu Gendarmerie */
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+form {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+form label {
+    margin-top: 0.5em;
+}
+
+form input, form textarea, form select {
+    padding: 0.5em;
+    margin-top: 0.2em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre intérieure */
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #00796b; /* Couleur de la bordure au focus */
+}
+
+form button {
+    margin-top: 1em;
+    padding: 0.7em;
+    color: #fff;
+    background-color: #0033A0; /* Bleu Gendarmerie */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center; /* Pour centrer le bouton */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour le bouton */
+}
+
+form button:hover {
+    background-color: #002366; /* Bleu Marine */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrer le contenu du tableau */
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.5em;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td[contenteditable="true"] {
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+td[contenteditable="true"]:focus {
+    outline: none;
+    background-color: #e0f7fa;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre intérieure au focus */
+}
+
+td button {
+    padding: 0.3em 0.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 2em 0;
+}
+
+.add-button {
+    margin-top: 1em;
+    padding: 0.7em 1em;
+    color: #fff;
+    background-color: #4CAF50; /* Vert pour le bouton Ajouter */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end; /* Aligner à droite */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour le bouton */
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.collapsible {
+    cursor: pointer;
+    padding: 0.5em;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: none;
+    outline: none;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.collapsible:hover {
+    background-color: #f1f1f1;
+}
+
+.content {
+    padding: 0 1em;
+    display: none;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}

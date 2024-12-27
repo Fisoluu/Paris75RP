@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Gestion Force de l'ordre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Gestion Force de l'ordre</h1>
+    </header>
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="#criminal-records"><i class="fas fa-folder-open"></i> Casiers Judiciaires</a></li>
+            <li><a href="#procedures"><i class="fas fa-book"></i> Procédures</a></li>
+            <li><a href="#police-patrols"><i class="fas fa-car"></i> Fiche des Patrouilles - Police Nationale</a></li>
+            <li><a href="#gendarmerie-patrols"><i class="fas fa-car"></i> Fiche des Patrouilles - Gendarmerie Nationale</a></li>
+            <li><a href="#complaints"><i class="fas fa-exclamation-circle"></i> Plaintes</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <div class="notification">
+                <h2>Bienvenue sur le Panel Force de l'ordre</h2>
+                <p>Ce panel vous permet de gérer les casiers judiciaires, les procédures, les patrouilles et les plaintes de manière efficace et centralisée.</p>
+            </div>
+        </section>
+        <section id="criminal-records" style="display:none;">
+            <h2>Casiers Judiciaires</h2>
+            <form id="criminal-record-form">
+                <label for="user">Utilisateur :</label>
+                <input type="text" id="user" name="user" required>
+                <label for="offense">Infraction :</label>
+                <input type="text" id="offense" name="offense" required>
+                <label for="date">Date :</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Ajouter</button>
+            </form>
+            <table id="criminal-records-table">
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Infraction</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les lignes de données seront ajoutées ici par JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section id="procedures" style="display:none;">
+            <h2>Procédures</h2>
+            <form id="procedure-form">
+                <label for="procedure-user">Utilisateur :</label>
+                <input type="text" id="procedure-user" name="procedure-user" required>
+                <label for="procedure-service">Service :</label>
+                <select id="procedure-service" name="procedure-service" required>
+                    <option value="PN">PN</option>
+                    <option value="GN">GN</option>
+                </select>
+                <label for="pdf-file">Fichier PDF :</label>
+                <input type="file" id="pdf-file" name="pdf-file" accept="application/pdf" required>
+                <label for="procedure-date">Date :</label>
+                <input type="date" id="procedure-date" name="procedure-date" required>
+                <button type="submit">Ajouter</button>
+            </form>
+            <table id="procedures-table">
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Service</th>
+                        <th>Fichier PDF</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les lignes de données seront ajoutées ici par JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section id="police-patrols" style="display:none;">
+            <h2>Fiche des Patrouilles - Police Nationale</h2>
+            <table id="police-patrols-table">
+                <thead>
+                    <tr>
+                        <th>Patrouille</th>
+                        <th>Dernière Activité</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TN750</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>TV Alpha 75</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>TV Bravo 75</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>TV Charlie 75</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="add-police-patrol-button" class="add-button">Ajoutez une patrouille</button>
+        </section>
+        <section id="gendarmerie-patrols" style="display:none;">
+            <h2>Fiche des Patrouilles - Gendarmerie Nationale</h2>
+            <table id="gendarmerie-patrols-table">
+                <thead>
+                    <tr>
+                        <th>Patrouille</th>
+                        <th>Dernière Activité</th>
+                        <th>Commentaire</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GN101</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>GN Alpha 101</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>GN Bravo 101</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                    <tr>
+                        <td>GN Charlie 101</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="add-gendarmerie-patrol-button" class="add-button">Ajoutez une patrouille</button>
+        </section>
+        <section id="complaints" style="display:none;">
+            <h2>Plaintes</h2>
+            <form id="complaint-form">
+                <label for="complaint-user">Utilisateur :</label>
+                <input type="text" id="complaint-user" name="complaint-user" required>
+                <label for="complaint-service">Service :</label>
+                <select id="complaint-service" name="complaint-service" required>
+                    <option value="PN">PN</option>
+                    <option value="GN">GN</option>
+                </select>
+                <label for="pdf-file">Fichier PDF :</label>
+                <input type="file" id="pdf-file" name="pdf-file" accept="application/pdf" required>
+                <label for="complaint-date">Date :</label>
+                <input type="date" id="complaint-date" name="complaint-date" required>
+                <button type="submit">Ajouter</button>
+            </form>
+            <table id="complaints-table">
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Service</th>
+                        <th>Fichier PDF</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les lignes de données seront ajoutées ici par JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div class="notification-top-right">
+        <span>Fait par Fisolu</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
